@@ -8,3 +8,5 @@ module Emerald
 		#TODO Setup a real DB
 		db = File.open("src/db.txt", "r")
 		render "src/views/blog.ecr"
+	end
+end
