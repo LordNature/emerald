@@ -1,5 +1,10 @@
 require "./emerald/*"
+require "kemal"
 
 module Emerald
-  # TODO Put your code here
+	get "/" do
+		"Hello!"
+	end
 end
+
+Kemal.run
