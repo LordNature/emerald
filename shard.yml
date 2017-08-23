@@ -1,0 +1,13 @@
+name: emerald
+version: 0.1.0
+
+authors:
+  -  <>
+
+targets:
+  emerald:
+    main: src/emerald.cr
+
+crystal: 0.23.1
+
+license: MIT
