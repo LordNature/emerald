@@ -1,5 +1,5 @@
-require "./emerald/*"
 require "kemal"
+require "./emerald/*"
 
 module Emerald
 	get "/" do
