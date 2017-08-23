@@ -31,15 +31,23 @@
   </div>
 </nav>
 
+	<%
+	db.each_line do |line|
+	ls = line.split("|")
+	if ls[0] == id
+	%>
+
 	<div class="jumbotron jumbotron-fluid">
 		<div class="container">
-			<h1 class="display-3">Fluid jumbotron</h1>
-			<p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+			<h1 class="display-3"><%= ls[1] %></h1>
+			<p class="lead"><%= ls[2] %></p>
 		</div>
 	</div>
 
 	<div class="container">
-
+	<%= ls[3] %>	
 	</div>
+<% end
+end %>
 </body>
 </html>
