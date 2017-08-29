@@ -1,0 +1,15 @@
+module Emerald
+	get "/blog" do
+		"NA"
+	end
+
+	get "/blog/:id" do |env|
+		Emerald::DB.db.query("SELECT * FROM posts ORDER BY id")
+
+		id = env.params.url["id"]
+		
+		#TODO Setup a real DB
+		db = File.open("src/db.txt", "r")
+		render "src/views/blog.ecr"
+	end
+end
