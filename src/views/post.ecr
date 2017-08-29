@@ -1,0 +1,27 @@
+<%
+Emerald::DB.db.query("SELECT * FROM posts WHERE id = #{id}") do |rs|
+  rs.each do
+    id = rs.read(Int)
+    title = rs.read(String)
+    author = rs.read(String)
+    hook = rs.read(String)
+    body = rs.read(String)
+    date = rs.read(Int)
+    sdate = Time.epoch(date).to_s("%d %B %Y")
+%>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-3"><%= title %></h1>
+    <p class="lead"><%= author %> | <%= sdate %></p>
+  </div>
+</div>
+
+<div class="container">
+  <%= Markdown.to_html(body) %>
+</div>
+
+<%
+  end
+end
+%>
