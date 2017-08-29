@@ -4,17 +4,6 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-  <script>
-function tc(un) {
-  var u = new Date(un * 1000);
-  var ms = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-  var y = u.getFullYear();
-  var m = ms[u.getMonth()];
-  var d = u.getDate();
-  var o = d + ' ' + m + ' ' + y
-  return o;
-}
-</script>
 </head>
 <body>
 
@@ -58,7 +47,7 @@ Emerald::DB.db.query("SELECT * FROM posts WHERE id = #{id}") do |rs|
 	<div class="jumbotron jumbotron-fluid">
 		<div class="container">
 			<h1 class="display-3"><%= title %></h1>
-			<p class="lead"><%= author %> | <script>document.write(tc(<%= date %>));</script> <%= sdate %></p>
+			<p class="lead"><%= author %> | <%= sdate %></p>
 		</div>
 	</div>
 
