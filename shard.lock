@@ -1,5 +1,9 @@
 version: 1.0
 shards:
+  active_record:
+    github: waterlink/active_record.cr
+    version: 0.4.3
+
   db:
     github: crystal-lang/crystal-db
     version: 0.4.2
@@ -12,6 +16,14 @@ shards:
     github: jeromegn/kilt
     version: 0.4.0
 
+  pool:
+    github: ysbaddaden/pool
+    version: 0.2.3
+
+  query:
+    github: waterlink/query.cr
+    version: 0.2.5
+
   radix:
     github: luislavena/radix
     version: 0.3.8
@@ -19,4 +31,8 @@ shards:
   sqlite3:
     github: crystal-lang/crystal-sqlite3
     commit: c850ec4b726ba41cc8bfda0cc3159f715e33a549
+
+  sqlite_adapter:
+    github: trapped/sqlite_adapter.cr
+    version: 0.1.0
 

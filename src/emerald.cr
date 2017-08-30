@@ -3,15 +3,9 @@ require "kemal"
 require "./emerald/*"
 
 module Emerald
-  get "/" do |env|
-    render "src/views/blog.ecr", "src/views/layout.ecr"
-  end
-
-  get "/blog/:id/:slug" do |env|
-    id = env.params.url["id"]
-    # Slug is for aesthetic purposes in the url, currently.
-    # slug = env.params.url["slug"]
-    render "src/views/post.ecr", "src/views/layout.ecr"
+  get "/" do
+    # To-do: Add multiple pages and limit the db fetches
+    Post.list
   end
 
   get "/:id" do |env|
@@ -19,13 +13,12 @@ module Emerald
     Post.query(id)
   end
 
-  get "/test" do |env|
-    # def seo_friendly(str)
-    # str.strip.downcase.gsub /\W+/, '-'
-    # end
-    test = "John is a very stupid person"
-    test2 = test.strip.downcase.gsub /\W+/, '-'
-    "<b>Before Slug:</b> #{test} <br> <b>After Slug:</b> #{test2}"
+  get "/:id/:slug" do |env|
+    id = env.params.url["id"]
+    # Slug is for aesthetic purposes in the url, currently.
+    # The purpose of this route is to allow the parameter to be mentioned when linking from the post listings.
+    # slug = env.params.url["slug"]
+    Post.query(id)
   end
 end
 
