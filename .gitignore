@@ -3,3 +3,7 @@
 /bin/
 /.shards/
 *.db
+*.map
+/src/public/js/
+/src/public/css/
+/src/public/fonts/
