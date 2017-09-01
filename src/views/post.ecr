@@ -1,10 +1,15 @@
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-3"><%= title %></h1>
-    <p class="lead"><%= author %> | <%= date %></p>
+<header class="banner">
+  <div class="overlay">
+    <div class="container">
+      <div class="post">
+        <h1><%= title %></h1>
+        <h2><%= Remarkdown.to_html(hook) %></h2>
+        <h3>by <a href="#AID"><%= author %></a> on <%= date %></h3>
+      </div>
+    </div>
   </div>
-</div>
+</header>
 
-<div class="container">
-  <%= Markdown.to_html(body) %>
+<div class="container" style="margin-top: 20px">
+  <%= Remarkdown.to_html(body) %>
 </div>

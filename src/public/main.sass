@@ -1,0 +1,153 @@
+$revision: 16
+$primary: #00a518
+$secondary: #212121
+/* Emerald AUTO-GENERATED CSS
+ * DO NOT MODIFY
+ * Revision #{$revision}
+ * Copyright 2017
+ */
+/*@import url('https://fonts.googleapis.com/css?family=Roboto')*/
+@font-face
+	font-family: 'Roboto'
+	src: url('/fonts/Roboto-Regular.ttf'), url('/fonts/Roboto-Light.ttf'), url('/fonts/Roboto-Medium.ttf'), url('/fonts/Roboto-Bold.ttf')
+	font-weight: normal
+	font-style: normal
+html, body
+	height: 100%
+a
+	color: lighten($primary, 25%)
+a:hover
+	color: darken($primary, 5%)
+	text-decoration: none
+body
+	font-family: 'Roboto', serif
+h1, h2, h3, h4, h5, h6
+	text-transform: uppercase
+	font-weight: 700
+p
+	line-height: 1rem
+.button-collapse
+	color: #26a69a
+nav
+	border-bottom: 2px solid $primary
+	box-shadow: 0px 10px 10px rgba(0,0,0,0.5)
+	.nav-wrapper i
+		margin-left: 5px
+.bg-primary
+	background-color: $secondary !important
+.input-field
+	.prefix.active
+		color: $primary
+	input[type=text]:focus + label, input[type=password]:focus + label,
+		color: #000
+	input[type=text]:focus:not([readonly]), input[type=text].valid, input[type=password]:focus:not([readonly]), input[type=password].valid
+		border-bottom: 1px solid $primary
+		box-shadow: 0 1px 0 0 $primary
+/* N/A */
+.ptext
+	color: lighten($primary, 25%)
+header.parallax-container
+	height: 92.2%
+	img
+		display: block
+		transform: translate3d(-50%, 255px, 0px)
+header.banner
+	margin: 0 auto
+	background: 0 50% no-repeat #000
+	background-image: url('/slide1.jpg')
+	background-size: cover
+	.overlay
+		background: rgba(0,0,0,.75)
+		padding-top: 60px
+		padding-bottom: 90px
+	.post
+		h1
+			color: #fff
+		h2
+			color: rgba(255,255,255,.5)
+			font-size: 1rem
+			text-transform: none
+		h3
+			color: rgba(255,255,255,.5)
+			font-size: 1rem
+			text-transform: none
+			a
+				color: white
+			a:hover
+				color: rgba(255,255,255,.75)
+
+pre
+	background-color: rgba(0,0,0,.04)
+	border: 1px solid rgba(0,0,0,.3)
+	margin: 15px 0
+	padding: 10px
+	font-size: 12px
+	color: #2d2d2d
+
+.jumbotron
+	background-color: lighten($secondary, 15%)
+	/*background-image: url('/test.jpg'); add blur */
+	color: #FFF
+	padding: 25px
+	h1
+		font-size: 4.5rem
+	p
+		font-size: 1rem
+
+/* Scroll */
+@mixin scrollbar($size, $primary, $secondary: lighten($primary, 25%))
+	::-webkit-scrollbar
+		width:  $size
+		height: $size
+
+	::-webkit-scrollbar-thumb
+		background: $primary
+
+	::-webkit-scrollbar-track
+		background: $secondary
+
+	body
+		scrollbar-face-color: $primary
+		scrollbar-track-color: $secondary
+
+@include scrollbar(.5em, $secondary)
+
+/* Section -- Services */
+section
+	h2.section-heading
+		margin-top: 75px
+	h3.section-subheading
+		font-size: 16px
+		text-transform: none
+		font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif
+		font-style: italic
+		font-weight: 400
+	h5.service-heading
+		font-size: 18px
+
+/* BELOW PARALLAX - todo */
+.parallax-container
+	min-height: 0px
+	line-height: 0
+	height: auto
+	color: rgba(255,255,255,.9)
+	.parallax-container .section
+		width: 100%
+@media only screen and (max-width : 992px)
+	.parallax-container .section 
+		position: absolute
+		top: 40%
+	#index-banner .section
+		top: 10%
+@media only screen and (max-width : 600px)
+	#index-banner .section
+		top: 0
+.icon-block
+	padding: 0 15px
+	h2
+		color: $primary
+footer
+	a
+		color: rgba(255,255,255,.8)
+	.page-footer
+	margin-top: 0 //For Features

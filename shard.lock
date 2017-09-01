@@ -16,6 +16,10 @@ shards:
     github: luislavena/radix
     version: 0.3.8
 
+  remarkdown:
+    github: huacnlee/remarkdown
+    commit: 35aa7b98919a444090fa5c55c96d09ac86d07805
+
   sqlite3:
     github: crystal-lang/crystal-sqlite3
     commit: c850ec4b726ba41cc8bfda0cc3159f715e33a549

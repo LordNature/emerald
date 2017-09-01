@@ -1,4 +1,4 @@
-require "markdown"
+require "remarkdown"
 require "kemal"
 require "./emerald/*"
 
@@ -22,4 +22,5 @@ module Emerald
   end
 end
 
+public_folder "src/public"
 Kemal.run
