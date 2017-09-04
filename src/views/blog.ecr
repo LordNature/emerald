@@ -9,13 +9,15 @@
   </div>
 </header>
 
-<div class="container">
-  <% posts.each do |post| 
-  date = Time.epoch(post.date).to_s("%B %d, %Y") %>
-  <ul class="list-group" style="margin-top: 5px">
-    <li class="list-group-item"><a href=/<%= post.id %>/<%= post.title.strip.downcase.gsub /\W+/, '-' %>><%= post.title %></a> by <%= post.author%> on <%= date %>
-      <br><%= Remarkdown.to_html(post.hook) %>
-    </li>
-  </ul>
-  <% end %>
+<div class="body">
+  <div class="container">  
+    <% posts.each do |post| 
+    date = Time.epoch(post.date).to_s("%B %d, %Y") %>
+    <ul class="list-group" style="margin-top: 5px">
+      <li class="list-group-item"><a href=/<%= post.id %>/<%= post.title.strip.downcase.gsub /\W+/, '-' %>><%= post.title %></a> by <%= post.author%> on <%= date %>
+        <br><%= Remarkdown.to_html(post.hook) %>
+      </li>
+    </ul>
+    <% end %>
+  </div>
 </div>
