@@ -1,4 +1,3 @@
-require "remarkdown"
 require "kemal"
 require "./emerald/*"
 

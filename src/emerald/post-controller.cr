@@ -1,3 +1,5 @@
+require "remarkdown"
+
 module Emerald
   class Post
     ::DB.mapping({

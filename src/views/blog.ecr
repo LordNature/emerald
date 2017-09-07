@@ -15,7 +15,7 @@
     date = Time.epoch(post.date).to_s("%B %d, %Y") %>
     <ul class="list-group" style="margin-top: 5px">
       <li class="list-group-item"><a href=/<%= post.id %>/<%= post.title.strip.downcase.gsub /\W+/, '-' %>><%= post.title %></a> by <%= post.author%> on <%= date %>
-        <br><%= Remarkdown.to_html(post.hook) %>
+        <br><%= post.hook %>
       </li>
     </ul>
     <% end %>
