@@ -5,8 +5,8 @@ The main focus of this project was to provide a development environment to learn
 ### Requisites
 Emerald requires the following to function:  
 
-`crystal` 0.23.1
-`shards` or invoke `crystal deps`
+`crystal` 0.23.1  
+`shards` or invoke `crystal deps`  
 `sassc` or any sass compiler
 
 ### Usage for Development
