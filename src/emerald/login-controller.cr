@@ -1,45 +1,24 @@
 require "remarkdown"
+require "crypto/bcrypt"
 
 module Emerald
-  class Post
-    ::DB.mapping({
-      id:     Int64,
-      title:  String,
-      author: String,
-      hook:   String,
-      body:   String,
-      date:   Int64,
-    })
-    JSON.mapping({
-      id:     Int64,
-      title:  String,
-      author: String,
-      hook:   String,
-      body:   String,
-      date:   Int64,
-    })
-
-    def self.query(id)
-      title, author, hook, body, date = Emerald::DB.db.query_one "SELECT title, author, hook, body, date FROM posts WHERE id = #{id}", as: {String, String, String, String, Int}
-      date = Time.epoch(date).to_s("%B %d, %Y")
-      view(post)
+  class Authors 
+    def self.register(user,pass)
+	pass = Crypto::Bcrypt::Password.create(pass, cost: 10).to_s
+	puts pass
+	Emerald::DB.db.exec("INSERT INTO authors (name, hash) VALUES (?, ?)", user, pass)
     end
 
-    def self.list
-      posts = Emerald::DB.db.query_all("SELECT * FROM posts ORDER BY id", as: Post)
-      view(blog)
+    def self.login(user,pass)
+	id, name, hash = Emerald::DB.db.query_one "SELECT * FROM authors WHERE name = '#{user}'", as: {Int64, String, String}
+	#pass = Crypto::Bcrypt::Password.create(pass, cost: 10).to_s
+	puts "Clear:" + pass
+	puts "Hash:" +  hash
+	if(hash == pass)
+		return "Success"
+	else
+		return "YOU FOOL!"
+	end
     end
-
-    def self.login()
-      un = "username"
-      pw = "password"
-      pwhash = "hashpw"
-    end
-
-    def self.register()
-      un = "username"
-      pw = "password"
-      pwcf = "passwordconfirm"
-    end
-  end
+ end
 end

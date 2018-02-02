@@ -10,4 +10,8 @@ module Emerald
 	error 418 do
 		"I'm a teapot."
 	end
+
+	error 500 do
+		"The server does not believe you. `internal server error`"
+	end
 end
