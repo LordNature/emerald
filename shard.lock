@@ -2,11 +2,11 @@ version: 1.0
 shards:
   db:
     github: crystal-lang/crystal-db
-    version: 0.4.2
+    version: 0.5.0
 
   kemal:
     github: kemalcr/kemal
-    commit: 2cfe789587fdc21f7878d65798f1a0e2f08027da
+    commit: 73045bb13855968ba4ce9cc8aed3b061edd66585
 
   kilt:
     github: jeromegn/kilt
@@ -22,5 +22,5 @@ shards:
 
   sqlite3:
     github: crystal-lang/crystal-sqlite3
-    commit: c850ec4b726ba41cc8bfda0cc3159f715e33a549
+    commit: 13916070e0fd6f93cccdd72f020acfded8d1e8dd
 
