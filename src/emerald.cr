@@ -44,5 +44,4 @@ module Emerald
   end
 end
 
-public_folder "src/public"
 Kemal.run

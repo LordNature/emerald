@@ -18,6 +18,6 @@ targets:
   emerald:
     main: src/emerald.cr
 
-crystal: 0.23.1
+crystal: 0.24.1
 
 license: MIT
