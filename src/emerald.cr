@@ -29,7 +29,7 @@ module Emerald
     pass = env.params.body["pass"].as(String)
     Authors.register(user, pass)
     # To-do: Write an error handler & success notification
-    #env.redirect "/register"
+    # env.redirect "/register"
   end
 
   get "/login" do

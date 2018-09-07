@@ -21,6 +21,7 @@ module Emerald
 
     def self.query(id)
       title, author, hook, body, date = Emerald::DB.db.query_one "SELECT title, author, hook, body, date FROM posts WHERE id = #{id}", as: {String, String, String, String, Int}
+      aid = 1
       date = Time.epoch(date).to_s("%B %d, %Y")
       view(post)
     end
